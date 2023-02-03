@@ -1,11 +1,14 @@
-package ma.petshop;
+package my.model;
+
+import javax.persistence.*;
+
+@Entity
+
 
 public class Pet {
 
-    public enum Breed {
-        GermanShepherd, BullDog, GoldenRetriever
-    }
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private Breed breed;
@@ -68,3 +71,4 @@ public class Pet {
         return "Pet{Id=" + this.id + ", Name='" + this.name + '\'' +  ", breed=" + this.breed + ", Color=" + this.color + ", Price=" + this.price + '}';
     }
 }
+
